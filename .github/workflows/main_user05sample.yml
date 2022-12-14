@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -19,10 +19,10 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v1
         with:
-          java-version: '17'
+          java-version: "17"
 
       - name: Build with Maven
-        run: 
+        run: |
           cd ${{ env.APP_PATH }}
           mvn clean install
 
@@ -33,10 +33,10 @@ jobs:
           path: "${{ github.workspace }}/${{ env.APP_PATH }}/target/*.jar"
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: "Production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
