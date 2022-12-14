@@ -26,5 +26,5 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ github.event.inputs.resourceGroup }}
-          template: ./src/Java/webapp-java/src/main/resources/templates/app-service.json
-          parameters: ./src/Java/webapp-java/src/main/resources/templates/app-service.parameters.json
+          template: ./templates/app-service.json
+          parameters: ./templates/app-service.parameters.json
