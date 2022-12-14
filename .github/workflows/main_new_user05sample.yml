@@ -7,6 +7,9 @@ on:
         description: "rg-user05"
         required: true
         type: string
+env:
+  APP_PATH: "src/Java/webapp-java"
+
 jobs:
   add-resource:
     runs-on: ubuntu-latest
@@ -23,5 +26,5 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ github.event.inputs.resourceGroup }}
-          template: ./templates/app-service.json
-          parameters: ./templates/app-service.parameters.json
+          template: ./src/Java/webapp-java/src/main/resources/templates/app-service.json
+          parameters: ./src/Java/webapp-java/src/main/resources/templates/app-service.parameters.json
