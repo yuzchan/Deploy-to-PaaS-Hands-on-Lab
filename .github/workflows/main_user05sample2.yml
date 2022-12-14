@@ -5,11 +5,11 @@ on:
   workflow_dispatch:
     inputs:
       resourceGroup:
-        description: 'rg-user04'
+        description: 'rg-user05'
         required: true
         type: string
       containerApp:
-        description: 'managedEnvironment-rguser04-1'
+        description: 'managedEnvironment-user05'
         required: true
         type: string
 
